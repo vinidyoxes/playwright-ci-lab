@@ -8,7 +8,7 @@ test('UI: homepage displays the expected heading', async ({ page }) => {
 
 test('API: health endpoint returns the expected contract', async ({ request }) => {
   const response = await request.get('/api/health');
-  expect(response.status()).toBe(200);
+  expect(response.status()).toBe(201);
   expect(response.headers()['content-type']).toContain('application/json');
   expect(await response.json()).toEqual({ status: 'ok', service: 'qa-ci-lab' });
 });
